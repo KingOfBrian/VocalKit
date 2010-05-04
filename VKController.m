@@ -11,7 +11,6 @@
 #import "VKPocketSphinxDecoder.h"
 #import "VKAudioQueueConnector.h"
 
-
 NSString * const VKRecognizedPhraseNotification = @"VKRecognizedPhraseNotification";
 NSString * const VKRecognizedPhraseNotificationTextKey = @"VKRecognizedPhraseNotificationTextKey";
 NSString * const VKRecognizedPhraseNotificationIDKey = @"VKRecognizedPhraseNotificationIDKey";
@@ -66,28 +65,20 @@ NSString * const VKRecognizedPhraseNotificationScoreKey = @"VKRecognizedPhraseNo
 
 
 - (void) configureConnector {
-	VKAudioQueueConnector *aqc = [[VKAudioQueueConnector alloc] initWithDecorder:decoder];
-	
-	connector = aqc;
+	connector = [[VKAudioQueueConnector alloc] initWithDecorder:decoder];
 }
 
 - (void) startListening {
-	VKAudioQueueConnector *aqc = (VKAudioQueueConnector*)connector;
-
 	[decoder startDecode];
-	[aqc startListening];
+	[connector startListening];
 }
 - (void) stopListening {
-	VKAudioQueueConnector *aqc = (VKAudioQueueConnector*)connector;
-	
-	[aqc stopListening];
+	[connector stopListening];
 	[decoder stopDecode];
 }
 
 - (BOOL) isListening {
-	VKAudioQueueConnector *aqc = (VKAudioQueueConnector*)connector;
-	
-	return [aqc listening];
+	return [connector listening];
 }
 - (void) postNotificationOfRecognizedText {
 	[decoder postNotificationOfRecognizedText];

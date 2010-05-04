@@ -35,8 +35,6 @@
 		error = AudioSessionSetProperty(kAudioSessionProperty_AudioCategory, sizeof(category), &category);
 		if (error) printf("couldn't set audio category!");
 		
-//		error = AudioSessionAddPropertyListener(kAudioSessionProperty_AudioRouteChange, propListener, self);
-//		if (error) printf("ERROR ADDING AUDIO SESSION PROP LISTENER! %d\n", error);
 		UInt32 inputAvailable = 0;
 		UInt32 size = sizeof(inputAvailable);
 		
@@ -48,16 +46,10 @@
 		}
 			
 		
-		// we also need to listen to see if input availability changes
-//		error = AudioSessionAddPropertyListener(kAudioSessionProperty_AudioInputAvailable, propListener, self);
-//		if (error) printf("ERROR ADDING AUDIO SESSION PROP LISTENER! %d\n", error);
-		
 		error = AudioSessionSetActive(true); 
 		if (error) printf("AudioSessionSetActive (true) failed");
 	}
 	
-//	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(playbackQueueStopped:) name:@"playbackQueueStopped" object:nil];
-//	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(playbackQueueResumed:) name:@"playbackQueueResumed" object:nil];
 	
 	UIColor *bgColor = [[UIColor alloc] initWithRed:.39 green:.44 blue:.57 alpha:.5];
 }

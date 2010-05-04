@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-#include "PocketSphinx.h"
+#include "pocketsphinx.h"
 
 
 #import "VKDecoder.h"

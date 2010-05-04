@@ -3,11 +3,13 @@ VocalKit
 
 VocalKit is a wrapper for available open source Speech related packages.   It's goal is to ease the development of voice recognition solutions for the iPhone by providing a nice, simple Objective-C API.
 
-Currently VocalKit is in an Alpha version and just wraps Pocket Sphinx.  When enabled, it will post notifications for the recognized speech.  It does not currently configure Pocket Sphinx programmatically, it just configures ps from a file.   It also does not trigger speech processing when the user stops speaking.  Anyone interested in helping is greatly appreciated.
+Currently VocalKit is in an Alpha version and just wraps [Pocket Sphinx][].  When enabled, it will post notifications for the recognized speech.  It does not currently configure Pocket Sphinx programmatically, it just configures ps from a file.   It also does not trigger speech processing when the user stops speaking.  Anyone interested in helping is greatly appreciated.
 
 Example:
 
         [vk startListening];
+        ....
+        [vk stopListening];
 
     ....
 
@@ -18,7 +20,9 @@ Example:
     }
 
 
-There is a project, VocalKitTest that is included that will recognize speech from the first paragraph of The Raven by Edgar Alan Poe using an n-gram Language Model.  The test is not a good representation of Pocket Sphinx's capabilities, and I hope to get a better tuned example up soon.
+There is a project, VocalKitTest that is included that will recognize speech from the first paragraph of The Raven by Edgar Alan Poe using an n-gram Language Model.  The test is not a great representation of Pocket Sphinx's capabilities, and I hope to get a better tuned example up soon.  Copying this project is the simplest way to get started with Pocket Sphinx.
+
+Discussion and Questions about VocalKit can be directed to me (brianaking@gmail.com), the [Google Group][] or as an issue here. 
 
   
 Allowing support for flite and Julius are also design goals, but not priorities.   
@@ -45,7 +49,7 @@ project is to use Xcode's "dependent project" facilities.  Here is how:
 
 3. Now you need to link the VocalKit static library to your project.  Click the "VocalKit.xcodeproj" 
    item that has just been added to the sidebar.  Under the "Details" table, you will see a single
-   item: libThree20.a.  Check the checkbox on the far right of libThree20.a.
+   item: libVocalKit.a.  Check the checkbox on the far right of libVocalKit.a.
 
 4. Now you need to add VocalKit as a dependency of your project, so Xcode compiles it whenever
    you compile your project.  Expand the "Targets" section of the sidebar and double-click your
@@ -70,7 +74,7 @@ project is to use Xcode's "dependent project" facilities.  Here is how:
 
 
 
-
-
+[Pocket Sphinx]: http://cmusphinx.sourceforge.net/
+[Google Group]: http://groups.google.com/group/vocalkit
 [Three20]: http://github.com/facebook/three20
 [CMU]: http://cmusphinx.sourceforge.net/
