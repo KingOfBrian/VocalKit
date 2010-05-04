@@ -81,12 +81,12 @@
 																	   inDirectory:@"model"]];
 	[vk setConfigString:[[NSBundle mainBundle] pathForResource:@"0407" 
 														ofType:@"lm"
-												   inDirectory:@"model/lm/t1"] 
+												   inDirectory:@"model/lm/raven"] 
 				 forKey:@"-lm"];
 
 	[vk setConfigString:[[NSBundle mainBundle] pathForResource:@"0407" 
 														ofType:@"dic"
-												   inDirectory:@"model/lm/t1"] 
+												   inDirectory:@"model/lm/raven"] 
 				 forKey:@"-dict"];	
 	[vk setConfigString:[NSString stringWithFormat:@"%@/%@", [[NSBundle mainBundle] bundlePath], @"model/hmm/wsj1"]
 				 forKey:@"-hmm"];	

@@ -19,7 +19,6 @@
 		8607FA04118B2DDA00FE23C0 /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8607FA03118B2DDA00FE23C0 /* libiconv.dylib */; };
 		8607FA37118B31BF00FE23C0 /* libVocalKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 864883D5118A09EE002AB038 /* libVocalKit.a */; };
 		864883AB118A00DC002AB038 /* model in Resources */ = {isa = PBXBuildFile; fileRef = 86488373118A00DC002AB038 /* model */; };
-		864883BE118A0129002AB038 /* MeterTable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 864883BD118A0129002AB038 /* MeterTable.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,7 +26,7 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = 864883D0118A09EE002AB038 /* VocalKit.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = D2AAC07D0554694100DB518D /* VocalKit */;
+			remoteGlobalIDString = D2AAC07D0554694100DB518D;
 			remoteInfo = VocalKit;
 		};
 		864883D4118A09EE002AB038 /* PBXContainerItemProxy */ = {
@@ -55,8 +54,6 @@
 		8607F92C118A412B00FE23C0 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		8607FA03118B2DDA00FE23C0 /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
 		86488373118A00DC002AB038 /* model */ = {isa = PBXFileReference; lastKnownFileType = folder; path = model; sourceTree = SOURCE_ROOT; };
-		864883BC118A0129002AB038 /* MeterTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeterTable.h; sourceTree = SOURCE_ROOT; };
-		864883BD118A0129002AB038 /* MeterTable.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MeterTable.cpp; sourceTree = SOURCE_ROOT; };
 		864883D0118A09EE002AB038 /* VocalKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = VocalKit.xcodeproj; path = ../VocalKit.xcodeproj; sourceTree = SOURCE_ROOT; };
 		8D1107310486CEB800E47090 /* VocalKitTest-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "VocalKitTest-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -114,8 +111,6 @@
 		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
-				864883BC118A0129002AB038 /* MeterTable.h */,
-				864883BD118A0129002AB038 /* MeterTable.cpp */,
 				32CA4F630368D1EE00C91783 /* VocalKitTest_Prefix.pch */,
 				29B97316FDCFA39411CA2CEA /* main.m */,
 			);
@@ -227,7 +222,6 @@
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				1D3623260D0F684500981E51 /* VocalKitTestAppDelegate.m in Sources */,
 				28D7ACF80DDB3853001CB0EB /* VocalKitTestViewController.m in Sources */,
-				864883BE118A0129002AB038 /* MeterTable.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,7 +273,6 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = (
-					../iPublicUtility,
 					../,
 					"$(HOME)$(SDK_DIR)/include/pocketsphinx",
 					"\"$(HOME)$(SDK_DIR)/include/sphinxbase\"",

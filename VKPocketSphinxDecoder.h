@@ -10,6 +10,7 @@
 
 #include "PocketSphinx.h"
 
+
 #import "VKDecoder.h"
 
 @interface VKPocketSphinxDecoder : NSObject <VKDecoder> {

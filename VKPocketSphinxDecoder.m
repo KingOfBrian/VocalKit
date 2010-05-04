@@ -94,6 +94,26 @@ static const arg_t vk_args_def[] = {
 	ps_process_raw([self ps], (int16*)buffer->mAudioData, packetCount, 1, 0);
 }
 
+/*- (void) gramarStates:(NSDictionary*)states transitions:(NSDictionary*)transitions named:(NSString*)name {
+
+	for (NSString *name in [states allKeys]) {
+		NSArray *words = [states objectForKey:name];
+
+		for (id<NSObject> state in words) {
+			if ([state isKindOfClass:[NSArray class]]) {
+				// Multiple Pronunciations
+				NSString* baseWord = nil;
+				for (
+			} else {
+				// Single Pronunciation
+			}
+		}
+	}
+}
+ */
+
+
+
 - (void) printDebug {
 	int32 score;
 	const char* uttid;

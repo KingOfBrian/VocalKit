@@ -11,6 +11,7 @@
 
 @protocol VKDecoder <NSObject>
 
+- (void) gramarStates:(NSDictionary*)states transitions:(NSDictionary*)transitions named:(NSString*)name;
 - (void) startDecode;
 - (void) recievePackets:(UInt32)packetCount fromBuffer:(AudioQueueBufferRef)buffer;
 - (void) stopDecode;

@@ -24,6 +24,7 @@
 		8607F947118A41DB00FE23C0 /* VKController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKController.h; sourceTree = "<group>"; };
 		8607F948118A41DB00FE23C0 /* VKController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKController.m; sourceTree = "<group>"; };
 		8607F9FD118B2DC500FE23C0 /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
+		8607FEDF118FC88D00FE23C0 /* README.mdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.mdown; sourceTree = "<group>"; };
 		864882101189CA1D002AB038 /* VKPocketSphinxDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKPocketSphinxDecoder.h; sourceTree = "<group>"; };
 		864882111189CA1D002AB038 /* VKPocketSphinxDecoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKPocketSphinxDecoder.m; sourceTree = "<group>"; };
 		864882141189CEFF002AB038 /* VKAudioQueueConnector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKAudioQueueConnector.h; sourceTree = "<group>"; };
@@ -60,6 +61,7 @@
 		0867D691FE84028FC02AAC07 /* VocalKit */ = {
 			isa = PBXGroup;
 			children = (
+				8607FEDF118FC88D00FE23C0 /* README.mdown */,
 				08FB77AEFE84172EC02AAC07 /* Classes */,
 				32C88DFF0371C24200C91783 /* Other Sources */,
 				0867D69AFE84028FC02AAC07 /* Frameworks */,

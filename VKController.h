@@ -28,6 +28,7 @@ extern NSString * const VKRecognizedPhraseNotificationScoreKey;
 // This class is a helper and designed to isolate the C++ objects 
 // from the rest of the system.  Must be sure not to include header
 // files that include C++ files
+// FIXME: C++ removed, clean this up!
 
 @interface VKController : NSObject {
 	id<VKDecoder> decoder;
