@@ -22,6 +22,11 @@ Example:
 
 There is a project, VocalKitTest that is included that will recognize speech from the first paragraph of The Raven by Edgar Alan Poe using an n-gram Language Model.  The test is not a great representation of Pocket Sphinx's capabilities, and I hope to get a better tuned example up soon.  Copying this project is the simplest way to get started with Pocket Sphinx.
 
+If you want to help, the following area's could use input:
+1. Help define the API for Finite State Gramar creation
+2. Add another (or better) pocket sphinx configuration.   An FSG example would be great.
+3. Add better HMM models or models for other languages.
+
 Discussion and Questions about VocalKit can be directed to me (brianaking@gmail.com), the [Google Group][] or as an issue here. 
 
   
