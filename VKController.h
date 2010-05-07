@@ -8,7 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import "VKDecoder.h"
-@class VKAudioQueueConnector;
+@class VKAQRecorder;
+@class VKFliteSpeaker;
 
 typedef enum {
 	VKDecoderTypePocketSphinx,
@@ -29,8 +30,8 @@ extern NSString * const VKRecognizedPhraseNotificationScoreKey;
 
 @interface VKController : NSObject {
 	id<VKDecoder> decoder;
-	VKAudioQueueConnector *connector;
-
+	VKAQRecorder *connector;
+	
 	VKDecoderType type;
 	VKDecoderMode mode;
 }
@@ -41,9 +42,6 @@ extern NSString * const VKRecognizedPhraseNotificationScoreKey;
 - (void) stopListening;
 - (BOOL) isListening;
 - (void) postNotificationOfRecognizedText;
-
-//- (void) speak:(NSString*) text;
-
 
 - (void) setConfigString:(NSString*)str forKey:(NSString*)key;
 - (void) setConfigInt:(int)iValue       forKey:(NSString*)key;

@@ -15,6 +15,7 @@
 		2899E5220DE3E06400AC0155 /* VocalKitTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2899E5210DE3E06400AC0155 /* VocalKitTestViewController.xib */; };
 		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
 		28D7ACF80DDB3853001CB0EB /* VocalKitTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D7ACF70DDB3853001CB0EB /* VocalKitTestViewController.m */; };
+		860701661193485300FE23C0 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 860701651193485300FE23C0 /* AVFoundation.framework */; };
 		8607F92D118A412B00FE23C0 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8607F92C118A412B00FE23C0 /* AudioToolbox.framework */; };
 		8607FA04118B2DDA00FE23C0 /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8607FA03118B2DDA00FE23C0 /* libiconv.dylib */; };
 		8607FA37118B31BF00FE23C0 /* libVocalKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 864883D5118A09EE002AB038 /* libVocalKit.a */; };
@@ -51,6 +52,7 @@
 		28D7ACF70DDB3853001CB0EB /* VocalKitTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VocalKitTestViewController.m; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* VocalKitTest_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VocalKitTest_Prefix.pch; sourceTree = "<group>"; };
+		860701651193485300FE23C0 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		8607F92C118A412B00FE23C0 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		8607FA03118B2DDA00FE23C0 /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
 		86488373118A00DC002AB038 /* model */ = {isa = PBXFileReference; lastKnownFileType = folder; path = model; sourceTree = SOURCE_ROOT; };
@@ -69,6 +71,7 @@
 				8607F92D118A412B00FE23C0 /* AudioToolbox.framework in Frameworks */,
 				8607FA04118B2DDA00FE23C0 /* libiconv.dylib in Frameworks */,
 				8607FA37118B31BF00FE23C0 /* libVocalKit.a in Frameworks */,
+				860701661193485300FE23C0 /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,6 +107,7 @@
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
+				860701651193485300FE23C0 /* AVFoundation.framework */,
 			);
 			name = CustomTemplate;
 			sourceTree = "<group>";
@@ -273,11 +277,10 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = (
+					"../include/**",
 					../,
-					"$(HOME)$(SDK_DIR)/include/pocketsphinx",
-					"\"$(HOME)$(SDK_DIR)/include/sphinxbase\"",
 				);
-				LIBRARY_SEARCH_PATHS = "\"$(HOME)$(SDK_DIR)/lib\"";
+				LIBRARY_SEARCH_PATHS = "";
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-all_load",

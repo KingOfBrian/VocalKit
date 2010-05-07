@@ -20,18 +20,26 @@ Example:
     }
 
 
-There is a project, VocalKitTest that is included that will recognize speech from the first paragraph of The Raven by Edgar Alan Poe using an n-gram Language Model.  The test is not a great representation of Pocket Sphinx's capabilities, and I hope to get a better tuned example up soon.  Copying this project is the simplest way to get started with Pocket Sphinx.
-
 If you want to help, the following area's could use input:
+
 1. Help define the API for Finite State Gramar creation
+
 2. Add another (or better) pocket sphinx configuration.   An FSG example would be great.
+
 3. Add better HMM models or models for other languages.
+
 
 Discussion and Questions about VocalKit can be directed to me (brianaking@gmail.com), the [Google Group][] or as an issue here. 
 
   
-Allowing support for flite and Julius are also design goals, but not priorities.   
+Allowing support for Julius is a design goal, but not priorities.   
  
+ 
+Getting Started with VocalKit
+=============================
+
+To get started, clone the resository and open 'VocalKit/VocalKitTest/VocalKitText.xcodeproj'.   This project will recognize speech from the first paragraph of The Raven by Edgar Alan Poe using an n-gram Language Model.  The test is not a great representation of Pocket Sphinx's capabilities, and I hope to get a better tuned example up soon.  Copying this project is the simplest way to get started with Pocket Sphinx.
+
 
 
 Adding VocalKit to your project (Thanks to [Three20][])
@@ -40,8 +48,6 @@ Adding VocalKit to your project (Thanks to [Three20][])
 VocalKit is compiled as a static library, and the easiest way to add it to your
 project is to use Xcode's "dependent project" facilities.  Here is how:  
 **Estimated time:** 5 minutes.
-
-0. Download and install the latest pocketsphinx and sphinxbase from [CMU][].   Build instructions are in the README file.
 
 1. Clone the vocalkit git repository: `git clone git://github.com/KingOfBrian/VocalKit.git`.  Make sure 
    you store the repository in a permanent place because Xcode will need to reference the files
@@ -68,14 +74,46 @@ project is to use Xcode's "dependent project" facilities.  Here is how:
 6. Finally, we need to tell your project where to find the VocalKit and pocketsphinx headers.  Open your
    "Project Settings" and go to the "Build" tab. Look for "Header Search Paths" and double-click
    it.  Add the following:
-     - The relative path from your project's directory to the "VocalKit" directory.
-     - "$(HOME)$(SDK_DIR)/include/pocketsphinx"
-     - "$(HOME)$(SDK_DIR)/include/sphinxbase"
+     - The relative path from your project's directory to the VocalKit directory.
+	 - The relative path from your project's directory to the VocalKit/include directory.
 
 7. While you are in Project Settings, go to "Other Linker Flags" under the "Linker" section, and
    add "-ObjC" and "-all_load" to the list of flags.
 
 8. You're ready to go.  Just #import "VKController.h" anywhere you want to use VocalKit Wrapper class
+
+
+
+Modifying VocalKit to build from Pocket Sphinx or Flite sources
+===============================================
+
+VocalKit comes with multi-architecture static libraries for Pocket Sphinx and Flite.   
+Follow these steps to configure VocalKit to compile from your custom built libraries.
+
+1. Build Pocket Sphinx and Sphinx Base using the 'build_for_iphone.sh' shell script.   
+   This will place the libraries in a platform selectable directory.   Follow the README for more information.
+
+2. Remove include, libflite*, libpocketsphinx, and libsphinxbase from the Frameworks folder
+
+3. In project settings, search for "Header Search Paths" and add these paths:
+
+- "$(HOME)$(SDK_DIR)/include/pocketsphinx"
+- "$(HOME)$(SDK_DIR)/include/sphinxbase"
+- "$(HOME)$(SDK_DIR)/include/flite"
+
+4. In project settings, search for "Library Search Paths" and add "$(HOME)$(SDK_DIR)/lib"
+
+5. While you are in Project Settings, go to "Other Linker Flags" under the "Linker" section, and
+   add "-lpocketsphinx", "-lsphinxbase", "-lflite", "-lflite_cmu_us_slt", "-lflite_cmulex", "-lflite_usenglish"
+   
+
+Packaging Considerations
+=======================
+
+Pocketsphinx and Flite are LARGE -- 16MB for all the multi-architecture static libraries!  Bundled into your app 
+it should strip out unused symbols and shrink down to around 5MB.  If you are submitting to the app store, only 
+include both flite and pocket sphinx if you are actually using features from pocketsphinx and flite.  
+
 
 
 

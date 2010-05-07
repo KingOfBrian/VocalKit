@@ -7,9 +7,9 @@
 //
 
 #import "VocalKitTestViewController.h"
-
+#import "VKFliteSpeaker.h"
 @implementation VocalKitTestViewController
-
+@synthesize audioPlayer;
 
 - (IBAction) recordOrStopPressed:(id)sender {
 	if (![vk isListening]) {
@@ -21,7 +21,26 @@
 		[vk showListened];
 		[vk postNotificationOfRecognizedText];
 	}
+}
 
+- (IBAction) speakPressed:(id)sender {
+	
+	NSString *file = [NSString stringWithFormat:@"%@/test.wav", 
+					  [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject]];
+					  
+
+	NSLog(@"Speakers = %@", [vkSpeaker speakers]);
+	[vkSpeaker speakText:textView.text toFile:file];
+
+	NSURL *url = [NSURL fileURLWithPath:file];
+	
+    NSError *error;
+
+    self.audioPlayer = [[[AVAudioPlayer alloc] initWithContentsOfURL:url error:&error] autorelease];
+    audioPlayer.numberOfLoops = 0;
+	
+	[audioPlayer play];
+	
 }
 - (void)awakeFromNib
 {		
@@ -88,6 +107,8 @@
 			selector:@selector(recognizedTextNotification:) 
 				name:VKRecognizedPhraseNotification 
 			  object:nil];
+	
+	vkSpeaker = [[VKFliteSpeaker alloc] init];
 }
 
 
