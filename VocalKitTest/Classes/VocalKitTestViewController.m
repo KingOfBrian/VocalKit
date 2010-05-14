@@ -53,23 +53,21 @@
 		UInt32 category = kAudioSessionCategory_PlayAndRecord;	
 		error = AudioSessionSetProperty(kAudioSessionProperty_AudioCategory, sizeof(category), &category);
 		if (error) printf("couldn't set audio category!");
-		
+
 		UInt32 inputAvailable = 0;
 		UInt32 size = sizeof(inputAvailable);
-		
+
 		// we do not want to allow recording if input is not available
 		error = AudioSessionGetProperty(kAudioSessionProperty_AudioInputAvailable, &size, &inputAvailable);
 		if (error) printf("ERROR GETTING INPUT AVAILABILITY! %d\n", error);
 		if (!inputAvailable) {
 			NSLog(@"No Input Available!");
 		}
-			
-		
+
 		error = AudioSessionSetActive(true); 
 		if (error) printf("AudioSessionSetActive (true) failed");
 	}
-	
-	
+
 	UIColor *bgColor = [[UIColor alloc] initWithRed:.39 green:.44 blue:.57 alpha:.5];
 }
 
@@ -90,16 +88,20 @@
 								 configFile:[[NSBundle mainBundle] pathForResource:@"pocketsphinx" 
 																			ofType:@"conf"
 																	   inDirectory:@"model"]];
-	[vk setConfigString:[[NSBundle mainBundle] pathForResource:@"0407" 
-														ofType:@"lm"
-												   inDirectory:@"model/lm/raven"] 
-				 forKey:@"-lm"];
 
-	[vk setConfigString:[[NSBundle mainBundle] pathForResource:@"0407" 
+	[vk setConfigString:[[NSBundle mainBundle] pathForResource:@"cmu07a"
 														ofType:@"dic"
-												   inDirectory:@"model/lm/raven"] 
-				 forKey:@"-dict"];	
-	[vk setConfigString:[NSString stringWithFormat:@"%@/%@", [[NSBundle mainBundle] bundlePath], @"model/hmm/wsj1"]
+												   inDirectory:@"model/lm/en_US"]
+				 forKey:@"-dict"];
+
+	[vk setConfigString:[[NSBundle mainBundle] pathForResource:@"wsj0vp.5000"
+														ofType:@"DMP"
+												   inDirectory:@"model/lm/en_US"]
+				 forKey:@"-lm"];
+	
+	
+
+	[vk setConfigString:[NSString stringWithFormat:@"%@/%@", [[NSBundle mainBundle] bundlePath], @"model/hmm/hub4wsj_sc_8k"]
 				 forKey:@"-hmm"];	
 	
 	NSNotificationCenter *dnc = [NSNotificationCenter defaultCenter];

@@ -19,7 +19,7 @@
 		8607F92D118A412B00FE23C0 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8607F92C118A412B00FE23C0 /* AudioToolbox.framework */; };
 		8607FA04118B2DDA00FE23C0 /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8607FA03118B2DDA00FE23C0 /* libiconv.dylib */; };
 		8607FA37118B31BF00FE23C0 /* libVocalKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 864883D5118A09EE002AB038 /* libVocalKit.a */; };
-		864883AB118A00DC002AB038 /* model in Resources */ = {isa = PBXBuildFile; fileRef = 86488373118A00DC002AB038 /* model */; };
+		86B4B749119DD3CE002EFC99 /* model in Resources */ = {isa = PBXBuildFile; fileRef = 86B4B71F119DD3CE002EFC99 /* model */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,8 +55,8 @@
 		860701651193485300FE23C0 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		8607F92C118A412B00FE23C0 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		8607FA03118B2DDA00FE23C0 /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
-		86488373118A00DC002AB038 /* model */ = {isa = PBXFileReference; lastKnownFileType = folder; path = model; sourceTree = SOURCE_ROOT; };
 		864883D0118A09EE002AB038 /* VocalKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = VocalKit.xcodeproj; path = ../VocalKit.xcodeproj; sourceTree = SOURCE_ROOT; };
+		86B4B71F119DD3CE002EFC99 /* model */ = {isa = PBXFileReference; lastKnownFileType = folder; path = model; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* VocalKitTest-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "VocalKitTest-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -100,7 +100,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
-				86488373118A00DC002AB038 /* model */,
+				86B4B71F119DD3CE002EFC99 /* model */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				864883D0118A09EE002AB038 /* VocalKit.xcodeproj */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
@@ -212,7 +212,7 @@
 			files = (
 				28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */,
 				2899E5220DE3E06400AC0155 /* VocalKitTestViewController.xib in Resources */,
-				864883AB118A00DC002AB038 /* model in Resources */,
+				86B4B749119DD3CE002EFC99 /* model in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
