@@ -5,6 +5,8 @@ VocalKit is a wrapper for available open source Speech related packages.   It's 
 
 Currently VocalKit is in an Alpha version and just wraps [Pocket Sphinx][].  When enabled, it will post notifications for the recognized speech.  It does not currently configure Pocket Sphinx programmatically, it just configures ps from a file.   It also does not trigger speech processing when the user stops speaking.  Anyone interested in helping is greatly appreciated.
 
+Please review the wiki if you run into any problems.
+
 Example:
 
         [vk startListening];
@@ -29,7 +31,7 @@ If you want to help, the following area's could use input:
 3. Add better HMM models or models for other languages.
 
 
-Discussion and Questions about VocalKit can be directed to me (brianaking@gmail.com), the [Google Group][] or as an issue here. 
+Discussion and Questions about VocalKit should go to the [Google Group][] or as an issue here. 
 
   
 Allowing support for Julius is a design goal, but not priorities.   
@@ -38,7 +40,7 @@ Allowing support for Julius is a design goal, but not priorities.
 Getting Started with VocalKit
 =============================
 
-To get started, clone the resository and open 'VocalKit/VocalKitTest/VocalKitText.xcodeproj'.   This project will recognize speech from the first paragraph of The Raven by Edgar Alan Poe using an n-gram Language Model.  The test is not a great representation of Pocket Sphinx's capabilities, and I hope to get a better tuned example up soon.  Copying this project is the simplest way to get started with Pocket Sphinx.
+To get started, clone the resository and open 'VocalKit/VocalKitTest/VocalKitText.xcodeproj'.   This project is setup with the WSJ 5k word corpus.  The test is not a great representation of Pocket Sphinx's capabilities, and I hope to get a better tuned example up soon.  Copying this project is the simplest way to get started with Pocket Sphinx.
 
 
 

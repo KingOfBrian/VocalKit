@@ -55,6 +55,7 @@
 		860701651193485300FE23C0 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		8607F92C118A412B00FE23C0 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		8607FA03118B2DDA00FE23C0 /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
+		860F232C11DE62B100F09BA8 /* Entitlements-Developer.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Entitlements-Developer.plist"; sourceTree = "<group>"; };
 		864883D0118A09EE002AB038 /* VocalKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = VocalKit.xcodeproj; path = ../VocalKit.xcodeproj; sourceTree = SOURCE_ROOT; };
 		86B4B71F119DD3CE002EFC99 /* model */ = {isa = PBXFileReference; lastKnownFileType = folder; path = model; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* VocalKitTest-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "VocalKitTest-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
@@ -117,6 +118,7 @@
 			children = (
 				32CA4F630368D1EE00C91783 /* VocalKitTest_Prefix.pch */,
 				29B97316FDCFA39411CA2CEA /* main.m */,
+				860F232C11DE62B100F09BA8 /* Entitlements-Developer.plist */,
 			);
 			name = "Other Sources";
 			sourceTree = "<group>";
@@ -244,6 +246,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = armv6;
+				CODE_SIGN_ENTITLEMENTS = "~/sandbox/VocalKit/VocalKitTest/Entitlements-Developer.plist";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -251,6 +255,7 @@
 				GCC_PREFIX_HEADER = VocalKitTest_Prefix.pch;
 				INFOPLIST_FILE = "VocalKitTest-Info.plist";
 				PRODUCT_NAME = VocalKitTest;
+				SDKROOT = iphoneos3.2;
 			};
 			name = Debug;
 		};
@@ -258,6 +263,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_ENTITLEMENTS = "~/sandbox/VocalKit/VocalKitTest/Entitlements-Developer.plist";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = VocalKitTest_Prefix.pch;
@@ -271,8 +277,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CODE_SIGN_ENTITLEMENTS = "Entitlements-Developer.plist";
 				CODE_SIGN_IDENTITY = "iPhone Developer: Brian King (8RPWHEYNFZ)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Brian King (8RPWHEYNFZ)";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
@@ -286,7 +293,6 @@
 					"-all_load",
 				);
 				PREBINDING = NO;
-				PROVISIONING_PROFILE = "0CE92C68-0073-40FF-9777-C7879C99D77A";
 				SDKROOT = iphoneos3.1.3;
 			};
 			name = Debug;
