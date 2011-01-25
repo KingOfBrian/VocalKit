@@ -1,6 +1,11 @@
 VocalKit
 ========
 
+I no longer advise using VocalKit, as a much better project, Open Ears has come out.   http://www.politepix.com/openears/
+
+
+
+
 VocalKit is a wrapper for available open source Speech related packages.   It's goal is to ease the development of voice recognition solutions for the iPhone by providing a nice, simple Objective-C API.
 
 Currently VocalKit is in an Alpha version and just wraps [Pocket Sphinx][].  When enabled, it will post notifications for the recognized speech.  It does not currently configure Pocket Sphinx programmatically, it just configures ps from a file.   It also does not trigger speech processing when the user stops speaking.  Anyone interested in helping is greatly appreciated.
